@@ -1,0 +1,18 @@
+{
+  "name": "webrtc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Milad Fallah",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "simple-peer": "^9.11.0",
+    "socket.io": "^4.4.1"
+  }
+}
