@@ -15,7 +15,7 @@ let activeUsers = [];
 
 io.on("connection", (socket) => {
     const socketExist = activeUsers.find(
-        (socketExist) => socketExist !== socket.id
+        (socketExist) => socketExist === socket.id
     );
     if(!socketExist) {
         activeUsers.push(socket.id);
@@ -24,6 +24,7 @@ io.on("connection", (socket) => {
                 (socketExist) => socketExist !== socket.id
             ),
         });
+        socket.broadcast.emit("update-user-list", { users: [socket.id] });
     }
 io.on("disconnect", () => {
     activeUsers = activeUsers.filter(
